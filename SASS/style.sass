@@ -1,0 +1,95 @@
+@import "https://fonts.googleapis.com/css?family=Lora&display=swap"
+
+*
+    box-sizing: border-box
+body
+    margin: 0
+    background-color: rgb(37,37,37)
+a
+    text-decoration: none
+.profile
+    position: relative
+    height: 100%
+    width: 100%
+    padding: 2.5%
+        bottom: 15%
+    text-align: center
+    img
+        width: 300px
+        height: 310px
+        border: 2.5px solid white
+        border-radius: 50%
+        transition: all .6s ease-in-out
+        &:hover
+            filter: grayscale(100%)
+    p
+        font-size: 35px
+        color: white
+        font-family: 'Lora', serif
+    .social
+        position: absolute
+        right: 15px
+        a
+            img
+                border: none
+                border-radius: 0
+                height: 20px 
+                width: 20px
+                margin:
+                    left: 10px
+.row
+    display: flex
+    flex-wrap: wrap
+    .column
+        flex: 25%
+        img
+            width: 100%
+            object-fit: cover
+            background: rgb(2,0,36)
+            background: linear-gradient(90deg, rgba(2,0,36,1) 48%, rgba(170,54,8,1) 80%, rgba(6,148,179,1) 100%)
+            transition: all 0.5s     
+            &.lazy-image
+                opacity: 0.1
+                will-change: opacity
+                transition: all 0.3s
+            &.lazy-image.loaded
+                opacity: 1
+            &:hover
+                filter: grayscale(100%)
+    
+// media queris
+@media screen and ( min-width: 900px )
+    body
+        .profile
+            padding: 
+                bottom: 5%        
+@media screen and ( max-width: 800px )
+    body
+        .profile
+            img
+                width: 200px
+                height: 210px
+            p
+                font-size: 27px
+            .social
+                a
+                    img
+                        height: 30px 
+                        width: 30px
+        .row
+            .column
+                flex: 50%    
+@media screen and ( max-width: 600px )
+    body
+        .row
+            .column
+                flex: 90%
+        .profile
+            .social
+                width: 100%
+                a
+                    img
+                        height: 30px 
+                        width: 30px
+                        margin:
+                            left: 15px
